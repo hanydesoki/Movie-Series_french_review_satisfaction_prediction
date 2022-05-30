@@ -1,4 +1,4 @@
-# Movie-Series_french_review_satisfaction_prediction
+# Movie and series french review satisfaction prediction
 
 This project objective is to create a machine learning model that predict movie or series satisfaction
 just with a french text review. 
