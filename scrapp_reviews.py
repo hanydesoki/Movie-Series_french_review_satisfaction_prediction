@@ -62,14 +62,15 @@ def main():
         for page_number in tqdm.tqdm(range(1, number_of_pages + 1)):
 
             # scrap page contents
-            source = requests.get(f"{review_url}?page={page_number}")
+
+            page_url = f"{review_url}?page={page_number}"
+
+            source = requests.get(page_url)
 
             if source is None:
                 continue
 
-            source = source.text
-
-            soup = bs4.BeautifulSoup(source, 'lxml')
+            soup = bs4.BeautifulSoup(source.text, 'lxml')
 
             # loop through all reviews in the html text
             for review in soup.find_all('div', class_="hred review-card cf"):
