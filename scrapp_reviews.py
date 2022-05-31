@@ -70,7 +70,7 @@ def main():
             soup = bs4.BeautifulSoup(source, 'lxml')
 
             # loop through all reviews in the html text
-            for i, review in enumerate(soup.find_all('div', class_="hred review-card cf"), start=1):
+            for review in soup.find_all('div', class_="hred review-card cf"):
 
                 try:
 
